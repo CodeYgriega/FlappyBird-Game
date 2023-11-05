@@ -1,0 +1,153 @@
+body {
+    padding: 0 0;
+    margin: 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+@font-face {
+    font-family: FlappyBirdFont;
+    src: url('./fonts/FlappyBirdy.ttf');
+}
+
+@font-face {
+    font-family: FlappyBirdNumbers;
+    src: url('./fonts/FlappyBirdNumbers.ttf');
+}
+
+.game-container {
+    background-image: url('./img/background.png');
+    width: 700px;
+    height: 570px;
+    position: relative;
+    overflow-x: hidden;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.pointCounter {
+    position: absolute;
+    left: 22px;
+    top: 22px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: FlappyBirdNumbers;
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 5px;
+    color: black;
+    font-size: 48px;
+}
+
+.bird {
+    background-image: url('./img/bird-initial.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 55px;
+    position: absolute;
+    bottom: 276px;
+    z-index: 0;
+}
+
+.obstacleBottom {
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    background-image: url('./img/pipe-green.png');
+    background-size: cover;
+    z-index: 0;
+}
+
+.obstacleTop {
+    width: 80px;
+    position: absolute;
+    top: 0;
+    background-image: url('./img/pipe-green.png');
+    background-size: cover;
+    transform: rotate(180deg);
+    z-index: 0;
+}
+
+.container-gameOver {
+    width: 700px;
+    height: 550px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: FlappyBirdFont;
+    font-size: 100px;
+    color: rgba(255, 162, 0, 0.874);
+    position: absolute;
+    z-index: 1;
+}
+
+.gameOver-score {
+    background-color: rgba(255, 255, 255, 0.605);
+    border-radius: 10px;
+    padding: 15px;
+    text-shadow: -2px -2px 1px #000000d8, 2px 2px 1px #000000d8, -2px 2px 1px #000000d8, 2px -2px 1px #000000d8;
+}
+
+.gameOver {
+    font-size: 120px;
+    margin: 0;
+    margin-bottom: -35px;
+}
+
+.score {
+    font-size: 120px;
+    margin: 0;
+}
+
+.scoreNumbers {
+    font-family: FlappyBirdNumbers;
+    font-size: 48px;
+}
+
+.btn-restart {
+    font-family: FlappyBirdFont;
+    font-size: 70px;
+    padding-top: 15px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 7px;
+    color: white;
+    background-color: rgba(0, 128, 0, 0.838);
+    text-shadow: -2px -2px 1px #000000d8, 2px 2px 1px #000000d8, -2px 2px 1px #000000d8, 2px -2px 1px #000000d8;
+    cursor: pointer;
+    transition: background .5s;
+}
+
+.btn-restart:hover {
+    background-color: rgb(0, 128, 0);
+}
+
+@media screen and (max-width: 705px){
+    .game-container {
+        width: 100vw;
+    }
+    .container-gameOver {
+        width: 100vw;
+    }
+    .gameOver {
+        font-size: 90px;
+    }
+    
+    .score {
+        font-size: 90px;
+    }
+    
+    .scoreNumbers {
+        font-size: 40px;
+    }
+    
+    .btn-restart {
+        font-size: 50px;
+    }
+}
